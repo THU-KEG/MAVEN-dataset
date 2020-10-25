@@ -7,7 +7,7 @@ The dataset can be obtained from [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/
 
 ## CodaLab
 
-To get the test results, you can submit your predictions to our permanent competition running at CodaLab. For the evaluation method, please refer to the [evaluation script](evaluate.py).
+To get the test results, you can submit your predictions to our permanent [competition](https://competitions.codalab.org/competitions/27320) running at CodaLab. For the evaluation method, please refer to the [evaluation script](evaluate.py).
 
 ## Codes
 
