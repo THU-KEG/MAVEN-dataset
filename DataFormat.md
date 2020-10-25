@@ -61,7 +61,7 @@ For the `test.jsonl`, the format is almost the same but we hide the annotation r
 }
 ```
 
-You can submit the prediction results for the test set to CodaLab to get the test results. You need to name your result file as `results.jsonl` and compress it into a `.zip` file for submission.
+You can submit the prediction results for the test set to [CodaLab](https://competitions.codalab.org/competitions/27320) to get the test results. You need to name your result file as `results.jsonl` and compress it into a `.zip` file for submission.
 
 Each line in the `results.jsonl` should be a json string encoding the prediction results for one document. The json format is as below:
 
