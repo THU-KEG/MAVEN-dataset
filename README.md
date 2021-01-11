@@ -11,7 +11,9 @@ To get the test results, you can submit your predictions to our permanent [compe
 
 ## Codes
 
-Coming soon.
+MOGANED codes are released now.
+
+Other codes are coming soon.
 
 ## Cite
 
