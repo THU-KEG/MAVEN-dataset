@@ -7,7 +7,7 @@ from constant import *
 flags = tf.flags
 flags.DEFINE_string("gpu", "1", "The GPU to run on")
 flags.DEFINE_string("mode", "MOGANED", "DMCNN or MOGANED")
-flags.DEFINE_boolean('eval', False, "Eval or Train")
+flags.DEFINE_bool('eval', False, "Eval or Train")
 
 def main(_):
     config = flags.FLAGS

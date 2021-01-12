@@ -13,7 +13,8 @@ tqdm
 # Usage
 To run this code, you need to:
 1. modify MAVEN dataset path, GloVe file path and stanfordcorenlp path in ```constant.py```
-2. Run ```python train.py --gpu [YOUR_GPU] --mode MOGANED --eval False``` to train.  Run ```python train.py --gpu [YOUR_GPU] --mode MOGANED --eval True``` to get prediction on test set (dumped to ```results.jsonl```).
+2. Run ```python train.py --gpu [YOUR_GPU] --mode MOGANED``` to train.  
+3. Run ```python train.py --gpu [YOUR_GPU] --mode MOGANED --eval``` to get prediction on test set (dumped to ```results.jsonl```).
 
 All parameters are in ```constant.py```, you can modify them as you wish.
 
@@ -26,8 +27,8 @@ However, preprocessing will only run once and the preprocessed files will be dum
 We run this code and submit the results to the leaderboard (username: wzq016):
 |Method|Precision|Recall|F1|
 |--|--|--|--|
-|MOGANED(Paper)|63.4|64.1|63.8|
-|MOGANED(Leaderboard)|64.6|66.0|65.3|
+|MOGANED(Paper)|63.4 ± 0.88|64.1 ± 0.90|63.8 ± 0.18|
+|MOGANED(Leaderboard)|64.7 ± 0.05|66.0 ± 0.02|65.3 ± 0.01|
 
 P.S. We improved the implementation after paper was published so the score is higher now.
 
