@@ -24,7 +24,7 @@ def run(parameters, config, device):
                     with open("./data/results_{}.jsonl".format(config.get("data", "formatter_name")[:-9]), "w", encoding="utf-8") as f:
                         for (k, v) in test_metric.items():
                             f.write(json.dumps({"id": k,
-                                                "prediction": v}))
+                                                "predictions": v}))
                             f.write('\n')
                         
     print("Best Epoch {}\nValid Metric: {}".format(saver["epoch"], saver["valid"]))
@@ -67,11 +67,13 @@ def run_one_epoch(parameters, config, device, epoch, mode):
                     prediction = prediction.cpu().numpy().tolist()
                 docids = data["docids"]
                 canids = data["canids"]
-                for d, c, p in zip(docids, canids, prediction):
-                    if d not in pred.keys():
-                        pred[d] = []
-                    pred[d].append({"id": c,
-                                    "type_id": p})
+                for doc, can, pre in zip(docids, canids, prediction):
+                    if doc not in pred.keys():
+                        pred[doc] = []
+                    assert (len(can) == len(pre))
+                    for c, p in zip(can, pre):
+                        pred[doc].append({"id": c,
+                                          "type_id": p})
         else:
             results = model(data=data, mode=mode)
             if mode != "test":
@@ -82,13 +84,11 @@ def run_one_epoch(parameters, config, device, epoch, mode):
                 prediction = results["prediction"].cpu().numpy().tolist()
                 docids = data["docids"]
                 canids = data["canids"]
-                for pr, ca in zip(canids, prediction):
-                    assert (len(pr) == len(ca))
-                    for p, c in zip(pr, ca):
-                        if docids not in pred.keys():
-                            pred[docids] = []
-                        pred[docids].append({"id": c,
-                                             "type_id": p})
+                for did, cid, pre in zip(docids, canids, prediction):
+                    if did not in pred.keys():
+                        pred[did] = []
+                    pred[did].append({"id": cid,
+                                      "type_id": pre})
         if mode != "test":
             print("\r{}: Epoch {} Step {:0>4d}/{} | Loss = {:.4f}".format(mode, epoch, step + 1, len(dataset), round(total_loss / (step + 1), 4)), end="")
         else:
@@ -97,6 +97,7 @@ def run_one_epoch(parameters, config, device, epoch, mode):
         if mode == "train":
             loss.backward()
             optimizer.step()
+
     if mode != "test":
         metric = evaluation.get_metric("all")
         sys.stdout.write("\r")

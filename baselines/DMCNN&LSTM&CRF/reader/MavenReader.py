@@ -171,7 +171,6 @@ class MavenReader(object):
                                 doc_canids[mention["sent_id"]][i] = mention["id"]
                                 doc_flags[mention["sent_id"]][i] = 1
 
-                    if mode != "test":
                         for tokens, labels, canids, flags in zip(doc_tokens, doc_labels, doc_canids, doc_flags):
                             processed_data["info_{}".format(mode)].append({"tokens": tokens,
                                                                            "labels": labels,

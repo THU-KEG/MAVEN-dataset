@@ -22,7 +22,7 @@ class DmcnnFormatter(object):
 
         for item in data:
             length = len(item["tokens"])
-            docids = item["docids"]
+            docids.append(item["docids"])
             tokens.append(item["tokens"] + [Global.word2id["<PAD>"]] * (sequence_length - length))
             canids.append(item["canids"])
             if mode != "test":

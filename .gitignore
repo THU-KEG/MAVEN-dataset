@@ -1,4 +1,6 @@
 /baselines/DMCNN&LSTM&CRF/data
+/baselines/DMCNN&LSTM&CRF/raw
+!/baselines/DMCNN&LSTM&CRF/raw/100.utf8
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
