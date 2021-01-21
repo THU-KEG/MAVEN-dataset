@@ -3,6 +3,7 @@ import sys
 import json
 import copy
 import torch
+from utils.global_variables import Global
 from utils.evaluation import Evaluation
 
 def run(parameters, config, device):
@@ -72,8 +73,11 @@ def run_one_epoch(parameters, config, device, epoch, mode):
                         pred[doc] = []
                     assert (len(can) == len(pre))
                     for c, p in zip(can, pre):
+                        if p != "O":
+                            p = p[2:]
+                        assert p in Global.type2id.keys()
                         pred[doc].append({"id": c,
-                                          "type_id": p})
+                                          "type_id": Global.type2id[p]})
         else:
             results = model(data=data, mode=mode)
             if mode != "test":

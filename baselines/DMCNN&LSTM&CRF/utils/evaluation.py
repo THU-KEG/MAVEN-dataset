@@ -37,10 +37,10 @@ class Evaluation(object):
                 ret["{}_f1".format(av)] = f1_score(y_true=y_true, y_pred=y_pred)
             else:
                 ret["{}_precision".format(av)], ret["{}_recall".format(av)], ret["{}_f1".format(av)], _ = precision_recall_fscore_support(y_true=y_true, 
-                                                                                                                                        y_pred=y_pred, 
-                                                                                                                                        labels=self.labels, 
-                                                                                                                                        average=av,
-                                                                                                                                        zero_division=0)
+                                                                                                                                          y_pred=y_pred, 
+                                                                                                                                          labels=self.labels, 
+                                                                                                                                          average=av,
+                                                                                                                                          zero_division=0)
         return {key : ('%.4f' % value) for key, value in ret.items() if key.startswith("micro") or key.endswith("f1")}
 
     def expand(self, batch_pred, batch_true):

@@ -7,4 +7,5 @@ class Global(object):
     id2word = None
     label2id = None
     id2label = None
+    type2id = None
     

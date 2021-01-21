@@ -17,4 +17,4 @@ we will train, evaluate and test on separate files in every epoch. We output the
 All parameters are in config files in `./config/`, you can modify them as you wish.
 
 # Note
-1. We use BIO schema in LSTM+CRF, and our experiment results published in [MAVEN: A Massive General Domain Event Detection Dataset](https://arxiv.org/abs/2004.13590) was tested based on it. Now that the evaluating script in [MAVEN-dataset Repo](https://github.com/THU-KEG/MAVEN-dataset/blob/main/evaluate.py) hasn't support BIO test, our result file of LSTM+CRF cannot support [Codelab](https://competitions.codalab.org/competitions/27320#learn_the_details-submission-format) and our `type_id` in it is not official. Detail information can be seen in files generated in `./data/`.
+1. We use BIO schema in LSTM+CRF, and our experiment results published in [MAVEN: A Massive General Domain Event Detection Dataset](https://arxiv.org/abs/2004.13590) was based on it. To support the evaluating script in [MAVEN-dataset Repo](https://github.com/THU-KEG/MAVEN-dataset/blob/main/evaluate.py), we convert the prediction labels into official labels and the results are similar.

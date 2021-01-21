@@ -34,6 +34,8 @@ class MavenReader(object):
             Global.id2word = data["id2word"]
             Global.label2id = data["label2id"]
             Global.id2label = data["id2label"]
+            if self.config.has_option("data", "BIO"):
+                Global.type2id = data["type2id"]
         for item in data["info"]:
             tokens = [data["word2id"][x]  if x in data["word2id"] else data["word2id"]["<UNK>"] for x in item["tokens"]]
             if mode != "test":
@@ -104,6 +106,7 @@ class MavenReader(object):
         if self.config.has_option("data", "BIO"):
             processed_data["label2id"]["O"] = 0
             processed_data["id2label"][0] = "O"
+            processed_data["type2id"] = {"O": 0}
         else:
             processed_data["label2id"]["None"] = 0
             processed_data["id2label"][0] = "None"
@@ -134,9 +137,12 @@ class MavenReader(object):
                                     doc_flags[candi["sent_id"]][i] = 1
                         else:
                             for event in doc["events"]:
+                                tp = event["type"].replace("-", "_")
+                                if tp not in processed_data["type2id"]:
+                                    processed_data["type2id"][tp] = event["type_id"]
                                 for mention in event["mention"]:
                                     for i in range(mention["offset"][0], mention["offset"][1]):
-                                        doc_labels[mention["sent_id"]][i] = ("B-" + event["type"].replace("-", "_")) if (i == mention["offset"][0]) else ("I-" + event["type"].replace("-", "_"))
+                                        doc_labels[mention["sent_id"]][i] = ("B-" + tp) if (i == mention["offset"][0]) else ("I-" + tp)
                                         doc_canids[mention["sent_id"]][i] = mention["id"]
                                         doc_flags[mention["sent_id"]][i] = 1
 
@@ -212,6 +218,8 @@ class MavenReader(object):
                              "label2id": processed_data["label2id"],
                              "id2label": processed_data["id2label"],
                              "sequence_length": processed_data["sequence_length"]}
+                if self.config.has_option("data", "BIO"):
+                    temp_data["type2id"] = processed_data["type2id"]
                 json.dump(temp_data, f, indent=2, ensure_ascii=False)
 
         with open(os.path.join(self.data_dir, self.flag_dir, 'flag'), "w+") as f:
