@@ -3,7 +3,7 @@ Source code and dataset for EMNLP 2020 paper "MAVEN: A Massive General Domain Ev
 
 ## Data
 
-The dataset can be obtained from [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/874e0ad810f34272a03b/) or [Google Drive](https://drive.google.com/drive/folders/19Q0lqJE6A98OLnRqQVhbX3e6rG4BVGn8?usp=sharing). The data format is introduced in [this document](DataFormat.md).
+The dataset (ver. 1.0) can be obtained from [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/874e0ad810f34272a03b/) or [Google Drive](https://drive.google.com/drive/folders/19Q0lqJE6A98OLnRqQVhbX3e6rG4BVGn8?usp=sharing). The data format is introduced in [this document](DataFormat.md).
 
 ## CodaLab
 
@@ -11,11 +11,9 @@ To get the test results, you can submit your predictions to our permanent [compe
 
 ## Codes
 
-MOGANED codes are released now.
+We release the source codes for the baselines, including [DMCNN](baselines/DMCNN & BiLSTM (CRF)), [BiLSTM](baselines/DMCNN & BiLSTM (CRF)), [BiLSTM+CRF](baselines/DMCNN & BiLSTM (CRF)), [MOGANED](baselines/MOGANED) and [DMBERT](baselines/DMBERT).
 
-Other codes are coming soon.
-
-## Cite
+## Citation
 
 If these data and codes help you, please cite this paper.
 

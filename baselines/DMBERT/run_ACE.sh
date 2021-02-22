@@ -1,0 +1,20 @@
+python3 run_ee.py \
+    --data_dir ../ACE05/ \     # path to the preprocessed ACE 2005 dataset
+    --model_type bert \
+    --model_name_or_path bert-base-uncased \
+    --task_name ace \
+    --output_dir ./ACE \       # Output path
+    --max_seq_length 128 \
+    --do_lower_case \
+    --per_gpu_train_batch_size 42 \
+    --per_gpu_eval_batch_size 42 \
+    --gradient_accumulation_steps 2 \
+    --learning_rate 5e-5 \
+    --num_train_epochs 10 \
+    --save_steps 300 \
+    --logging_steps 300 \
+    --seed 2 \
+    --do_train \
+    --do_eval \
+    --do_test \
+    --evaluate_during_training
