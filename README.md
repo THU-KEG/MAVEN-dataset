@@ -11,7 +11,7 @@ To get the test results, you can submit your predictions to our permanent [compe
 
 ## Codes
 
-We release the source codes for the baselines, including [DMCNN](baselines/DMCNN & BiLSTM (CRF)), [BiLSTM](baselines/DMCNN & BiLSTM (CRF)), [BiLSTM+CRF](baselines/DMCNN & BiLSTM (CRF)), [MOGANED](baselines/MOGANED) and [DMBERT](baselines/DMBERT).
+We release the source codes for the baselines, including [DMCNN](baselines/DMCNN_BiLSTM_(CRF)), [BiLSTM](baselines/DMCNN_BiLSTM_(CRF)), [BiLSTM+CRF](baselines/DMCNN_BiLSTM_(CRF)), [MOGANED](baselines/MOGANED) and [DMBERT](baselines/DMBERT).
 
 ## Citation
 
