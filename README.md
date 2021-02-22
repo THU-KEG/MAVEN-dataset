@@ -5,6 +5,8 @@ Source code and dataset for EMNLP 2020 paper "MAVEN: A Massive General Domain Ev
 
 The dataset (ver. 1.0) can be obtained from [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/874e0ad810f34272a03b/) or [Google Drive](https://drive.google.com/drive/folders/19Q0lqJE6A98OLnRqQVhbX3e6rG4BVGn8?usp=sharing). The data format is introduced in [this document](DataFormat.md).
 
+We also release the document topics for data analysis and model development. The [``docid2topic.json``](docid2topic.json) is to map the document ids to their EventWiki topic labels.
+
 ## CodaLab
 
 To get the test results, you can submit your predictions to our permanent [competition](https://competitions.codalab.org/competitions/27320) running at CodaLab. For the evaluation method, please refer to the [evaluation script](evaluate.py).
