@@ -4,12 +4,12 @@ Each `.jsonl` file is a subset of MAVEN and each line in the files is a json str
 
 ```json
 {
-    "id": '6b2e8c050e30872e49c2f46edb4ac044', # an unique string for each document
-    "title": 'Selma to Montgomery marches'， # the tiltle of the document
-    "content": [ # the content of the document. A list, each item is a dict for a sentence
+    "id": "6b2e8c050e30872e49c2f46edb4ac044", # an unique string for each document
+    "title": "Selma to Montgomery marches"， # the tiltle of the document
+    "content":[ # the content of the document. A list, each item is a dict for a sentence
     		{
     			"sentence":"...", # a string, the plain text of the sentence
-    			"tokens": ["...", "..."] # a list, tokens of the sentence
+    			"tokens":["...", "..."] # a list, tokens of the sentence
 		}
     ],
     "events":[ # a list for annotated events, each item is a dict for an event
