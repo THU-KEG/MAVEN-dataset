@@ -1,7 +1,7 @@
 python3 run_ee.py \
-    --data_dir ../maven/ \   #specify the data path, remember to delete the cached files at first (otherwise the test data may be random shuffled before)
+    --data_dir ../maven/ \ #path to the test data, remember to delete the cached files at first (otherwise the test data may be random shuffled before)
     --model_type bert \
-    --model_name_or_path ./MAVEN/checkpoint-1500 \ #specify the trained checkpoint
+    --model_name_or_path ./MAVEN/checkpoint-2500 \ #path to the trained checkpoint
     --task_name maven_infer \
     --output_dir ./MAVEN \ #output path
     --max_seq_length 128 \
@@ -13,9 +13,9 @@ python3 run_ee.py \
     --num_train_epochs 5 \
     --save_steps 500 \
     --logging_steps 500 \
-    --seed 2 \
+    --seed 42 \
     --do_infer #add this flag to do inference only
-python3 get_submission.py \           #convert the predictions to the submission format
+python3 get_submission.py \ #convert the predictions to the submission format
     --test_data ../maven/test.jsonl \ #path to the test data file
-    --preds MAVEN/_preds.npy \        #path to the prediction file, to be consistent with the output_dir argument above
-    --output ../maven/results.jsonl   #output file
+    --preds MAVEN/checkpoint-2500/checkpoint-2500_preds.npy \ #path to the prediction file
+    --output ./results.jsonl #output file
