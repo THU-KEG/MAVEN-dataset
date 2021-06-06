@@ -17,6 +17,8 @@ This code is the implementation for [DMBERT](https://www.aclweb.org/anthology/N1
 
 ## Usage
 
+Hint: please read and delete all the comments after ```\``` in each line of the ```.sh``` scripts before running them.
+
 ### On MAVEN:
 
 1. Download MAVEN data files.
