@@ -1,0 +1,18 @@
+python3 run_ACE.py \
+    --data_dir ../ACE05/ \ # path to the preprocessed ACE 2005 dataset
+    --model_type bertcrf \
+    --model_name_or_path bert-base-uncased \
+    --output_dir ./ACE \ #path to dump checkpoints 
+    --max_seq_length 128 \
+    --do_lower_case \
+    --per_gpu_train_batch_size 32 \
+    --per_gpu_eval_batch_size 32 \
+    --gradient_accumulation_steps 8 \
+    --learning_rate 5e-5 \
+    --num_train_epochs 10 \
+    --save_steps 36 \
+    --logging_steps 36 \
+    --seed 24 \
+    --do_train \
+    --do_eval \
+    --evaluate_during_training

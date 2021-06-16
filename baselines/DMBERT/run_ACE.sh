@@ -3,7 +3,7 @@ python3 run_ee.py \
     --model_type bert \
     --model_name_or_path bert-base-uncased \
     --task_name ace \
-    --output_dir ./ACE \       # Output path
+    --output_dir ./ACE \       # path to dump checkpoints
     --max_seq_length 128 \
     --do_lower_case \
     --per_gpu_train_batch_size 42 \
