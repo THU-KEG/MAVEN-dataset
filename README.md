@@ -9,7 +9,7 @@ We also release the document topics for data analysis and model development. The
 
 ## CodaLab
 
-To get the test results, you can submit your predictions to our permanent [competition](https://competitions.codalab.org/competitions/27320) running at CodaLab. For the evaluation method, please refer to the [evaluation script](evaluate.py).
+To get the test results, you can submit your predictions to our permanent [CodaLab competition](https://codalab.lisn.upsaclay.fr/competitions/395) (the [older version](https://competitions.codalab.org/competitions/27320) will be phased out soon). For the evaluation method, please refer to the [evaluation script](evaluate.py).
 
 ## Codes
 
