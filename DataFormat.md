@@ -1,6 +1,6 @@
 # MAVEN dataset
 
-Each `.jsonl` file is a subset of MAVEN and each line in the files is a json string for a document. For the `train.jsonl` and `dev.jsonl` the json format is as below:
+Each `.jsonl` file is a subset of MAVEN and each line in the files is a json string for a document. For the `train.jsonl` and `valid.jsonl` the json format is as below:
 
 ```JSON5
 {
@@ -27,7 +27,7 @@ Each `.jsonl` file is a subset of MAVEN and each line in the files is a json str
              	     	]
         	},
     ],
-    "negative_triggers":[ // a list for negative instances, each item is a dict for an negative mention
+    "negative_triggers":[ // a list for negative instances, each item is a dict for a negative mention
         {
         	"id": "46348f4078ae8460df4916d03573b7de",
             	"trigger_word": "desire",
